@@ -4,6 +4,7 @@ using namespace std;
 
 // declare
 void menu();
+void menuthx();
 double ceksaldo(double saldo);
 double tariktunai(double saldo);
 double setortunai(double saldo);
@@ -44,10 +45,11 @@ int main () {
             cin >> s;
             goto menu;
             break; 
-        default:
-            break;
         }
     } while (i!=4);
+    system("cls");
+    menuthx();
+    cin.get();
     return 0;
 }
 
@@ -67,17 +69,26 @@ void menu(){
     cout<<" Pilihan Anda : ";
 }
 
+//menu terimakasih
+void menuthx(){
+    cout<<" _____________________________________________________ "<<endl;
+    cout<<"|                   Bank Kelompok 3                   |"<<endl;
+    cout<<"|_____________________________________________________|"<<endl;
+    cout<<"|      Terima Kasih Telah Menggunakan Bank Kami       |"<<endl;                                
+    cout<<"|_____________________________________________________|"<<endl;
+}
+
 //cek saldo
 double ceksaldo(double saldo){
     cout << "Saldo anda adalah Rp." << saldo << endl;
-    cout << "Klik apa saja untuk kembali ke halaman utama" << endl;
+    cout << "Ketik apa saja untuk kembali ke halaman utama" << endl;
     return saldo;
 }
 
 //tarik tunai
 double tariktunai(double saldo){
     double tarik;
-    cout << "Masukan nominal yang ingin anda ambil: ";
+    cout << "Masukan nominal yang ingin anda ambil: Rp. ";
     cin >> tarik;
     if (tarik <= saldo)
     {
@@ -86,17 +97,17 @@ double tariktunai(double saldo){
         cout << "Saldo anda tidak mencukupi" << endl;
     } 
     cout << "Saldo anda adalah Rp." << saldo << endl;
-    cout << "Klik apa saja untuk kembali ke halaman utama" << endl;
+    cout << "Ketik apa saja untuk kembali ke halaman utama" << endl;
     return saldo;
 }
 
 //setor tunai
 double setortunai(double saldo){
     double setor;
-    cout << "Masukan nominal yang ingin anda tambahkan: ";
+    cout << "Masukan nominal yang ingin anda tambahkan: Rp. ";
     cin >> setor;
     saldo+=setor;
     cout << "Saldo anda adalah Rp." << saldo << endl;
-    cout << "Klik apa saja untuk kembali ke halaman utama" << endl;
+    cout << "Ketik apa saja untuk kembali ke halaman utama" << endl;
     return saldo;
 }
